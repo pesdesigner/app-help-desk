@@ -32,7 +32,7 @@
       <?php include("cadastro.php"); ?>                
        
         <div class="jumbotron">
-          <h1 class="display-3">Banco de dados PHP</h1>
+          <h1 class="display-3">Projeto Banco de dados MySQL e PHP</h1>
           <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           
           
