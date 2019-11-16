@@ -1,0 +1,28 @@
+html,body {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  
+}
+
+.header {
+    margin-top: 20px;
+}
+
+.jumbotron{
+    margin-top: 20px;
+}
+
+
+
+footer {
+    text-align: center;
+}
+
+.chamado {
+    padding: 30px 0 0 0;
+    margin-top: 15px;
+    width: 100%;
+    margin: 0 auto;
+  }

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PHP - página dinâmica</title>
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header clearfix">
+          <nav>
+            <ul class="nav nav-pills float-right">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contato</a>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#login">
+                    Entrar <i class="fas fa-sign-in-alt"></i>
+                </button>
+               
+              </li>
+            </ul>
+          </nav>
+          <h3 class="text-muted">Modelo de Cadastro PHP</h3>
+        </div>
+
+        
+        <!-- Modal Login -->
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Entrar na plataforma</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form class="form-horizontal">
+                  <fieldset>
+                  
+                  <!-- Password input-->
+                  <div class="form-group">
+                    <label class="col-md-12 control-label" for="senha">E-mail</label>
+                    <div class="col-md-12">
+                      <input id="email" name="email" type="email" placeholder="Digite seu e-mail" class="form-control input-md" required="">
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-md-12 control-label" for="email">Senha</label>  
+                    <div class="col-md-12">
+                    <input id="senha" name="senha" type="password" placeholder="Digite sua senha" class="form-control input-md" required="">
+                      
+                    </div>
+                  </div>
+
+                  <? if(isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
+
+                    <div class="text-danger">
+                      Usuário ou senha inválidos(s)
+                    </div>
+    
+                    <? } ?>
+    
+                    <? if(isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
+    
+                    <div class="text-danger">
+                      É necessário fazer o Login para ter acesso!
+                    </div>
+    
+                  <? } ?>
+                  
+                  <!-- Button (Double) -->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="login"></label>
+                    <div class="col-md-12">
+                      <button id="login" type="submit" name="login" class="btn btn-success">Entrar</button>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastro">Não tenho Cadastro. Cadastrar!</button>
+                    </div>
+                  </div>
+                  
+                  </fieldset>
+                  </form>
+                  
+          </div>
+          </div>
+          </div>
+        </div>
+  
+  
+      
+  
+           <!-- Button trigger modal -->
+
+       
+
+        <!-- Modal Cadastro-->
+        <div class="modal fade" id="cadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Cadastro de Perfil</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <fieldset>
+                
+               
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="nome">Nome</label>  
+                  <div class="col-md-12">
+                  <input id="nome" name="nome" type="text" placeholder="Digite seu nome" class="form-control input-md" required="">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="email">E-mail</label>  
+                  <div class="col-md-12">
+                  <input id="email" name="email" type="text" placeholder="Digite seu email" class="form-control input-md" required="">
+                  
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="tel">Telefone</label>  
+                  <div class="col-md-6">
+                  <input id="tel" name="tel" type="text" placeholder="Digite seu telefone" class="form-control input-md">
+                    
+                  </div>
+                </div>
+                
+                <!-- Multiple Radios -->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="sexo">Informe o sexo</label>
+                  <div class="col-md-12">
+                  <div class="radio">
+                    <label for="sexo-0">
+                      <input type="radio" name="sexo" id="sexo-0" value="1" checked="checked">
+                      feminino
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label for="sexo-1">
+                      <input type="radio" name="sexo" id="sexo-1" value="2">
+                      masculino
+                    </label>
+                  </div>
+                  </div>
+                </div>
+                
+                <!-- Select Basic -->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="estado">Estado</label>
+                  <div class="col-md-6">
+                    <select id="estado" name="estado" class="form-control">
+                      <option value="1">São paulo</option>
+                      <option value="2">Rio de Janeiro</option>
+                      <option value="3">Belo Horizonte</option>
+                      <option value="4">Fortaleza</option>
+                      <option value="5">Salvador</option>
+                      <option value="6">Curitiba</option>
+                      <option value="7">Florianópolis</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <!-- Textarea -->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="assunto">Assunto</label>
+                  <div class="col-md-12">                     
+                    <textarea class="form-control" id="assunto" name="assunto"></textarea>
+                  </div>
+                </div>
+                
+                <!-- Button -->
+                <div class="form-group">
+                  <label class="col-md-12 control-label" for="enviar"></label>
+                  <div class="col-md-12">
+                    <button id="enviar" name="enviar" class="btn btn-success">Enviar</button>
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
+                        Login <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                  </div>
+                </div>
+                
+                </fieldset>
+                </form>
+                
+        </div>
+   
+        </div>
+        </div>
+        </div>
+
+
+  
+        <div class="jumbotron">
+          <h1 class="display-3">Banco de dados PHP</h1>
+          <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastro">
+                Cadastre-se
+          </button>
+
+         <!-- Button trigger modal -->
+         
+
+
+        </div>
+  
+        <div class="row marketing">
+          <div class="col-lg-6">
+            <h4>Sobre a empresa</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+  
+            
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+  
+            
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          </div>
+
+        </div>
+
+        <hr>
+  
+        <footer class="footer">
+          <p>© Company 2017</p>
+        </footer>
+  
+      </div> <!-- /container -->
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
